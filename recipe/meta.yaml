@@ -1,5 +1,5 @@
 {% set name = "dgllife" %}
-{% set version = "0.2.8" %}
+{% set version = "0.2.9" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dgllife-{{ version }}.tar.gz
-  sha256: 197cfdaee81e486cf42894be6b28d80246296646168d932534868a9c95c0b855
+  sha256: 72523c0cb5afb0d61a0c0e2b2b75e5679dc219fa14102c05dd2218009cfd9f25
 
 build:
   number: 0
