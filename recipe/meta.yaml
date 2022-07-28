@@ -31,11 +31,12 @@ requirements:
     - scipy >=1.1.0
     - tqdm
 
-test:
-  commands:
-    - pip check
-  requires:
-    - pip
+# disable pip check because of https://github.com/awslabs/dgl-lifesci/pull/179
+# test:
+#   commands:
+#     - pip check
+#   requires:
+#     - pip
 
 about:
   home: https://github.com/awslabs/dgl-lifesci
