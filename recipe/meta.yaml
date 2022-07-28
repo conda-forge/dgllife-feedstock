@@ -37,7 +37,7 @@ test:
     # - pip check
     # NOTE(hadim): we can't import `dgllife` since it requires  the `dgl` package.
     # but we can at least check it exists in the path.
-    - python -c "import importlib; assert importlib.util.find_spec('dgllife') is not None"
+    - python -c "import importlib.util; assert importlib.util.find_spec('dgllife') is not None"
   requires:
     - pip
 
