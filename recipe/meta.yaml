@@ -32,11 +32,11 @@ requirements:
     - tqdm
 
 # disable pip check because of https://github.com/awslabs/dgl-lifesci/pull/179
-# test:
+test:
 #   commands:
 #     - pip check
-#   requires:
-#     - pip
+  requires:
+    - pip
 
 about:
   home: https://github.com/awslabs/dgl-lifesci
