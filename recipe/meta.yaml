@@ -33,8 +33,11 @@ requirements:
 
 # disable pip check because of https://github.com/awslabs/dgl-lifesci/pull/179
 test:
-#   commands:
-#     - pip check
+  commands:
+    # - pip check
+    # NOTE(hadim): we can't import `dgllife` since it requires  the `dgl` package.
+    # but we can at least check it exists in the path.
+    - python -c "import importlib; assert importlib.util.find_spec('dgllife') is not None"
   requires:
     - pip
 
