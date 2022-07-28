@@ -1,5 +1,5 @@
 {% set name = "dgllife" %}
-{% set version = "0.2.9" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dgllife-{{ version }}.tar.gz
-  sha256: 72523c0cb5afb0d61a0c0e2b2b75e5679dc219fa14102c05dd2218009cfd9f25
+  sha256: 36c516ce029d3030a76931f40f2eb118d2bbad2988b47ab126cf07d42eeed823
 
 build:
   number: 0
@@ -31,9 +31,13 @@ requirements:
     - scipy >=1.1.0
     - tqdm
 
+# disable pip check because of https://github.com/awslabs/dgl-lifesci/pull/179
 test:
   commands:
-    - pip check
+    # - pip check
+    # NOTE(hadim): we can't import `dgllife` since it requires  the `dgl` package.
+    # but we can at least check it exists in the path.
+    - python -c "import importlib.util; assert importlib.util.find_spec('dgllife') is not None"
   requires:
     - pip
 
